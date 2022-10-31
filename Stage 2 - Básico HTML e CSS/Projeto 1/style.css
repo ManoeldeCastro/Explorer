@@ -28,9 +28,13 @@ footer {
   bottom: 0px;
   width: 80%;
   margin-bottom: 20px;
+  padding-top: 2px;
+  border-top: solid 1px rgba(0, 0, 0, 0.276);
 }
 a {
   color: #ff9900;
   text-decoration: none;
-  margin: 0px 20px;
+}
+a + a {
+  margin-left: 20px;
 }
