@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <header>
+      <h1>Crie e compartilhe seu evento.</h1>
+      <p>O primeiro passo, é preencher esse formulário de inscrição.</p>
+    </header>
+
+    <main>
+      <form action="" method="get">
+        <fieldset>
+          <h2>Informações do Evento</h2>
+          <label for="titulo">Título do evento<span>(mínimo 8 caracteres)</span></label
+          ><br />
+          <input type="text" name="titulo" id="titulo" />
+          <br />
+          <label for="Link">Link do evento<span>(comece com https://)</span
+          ></label><br />
+          <input type="text" id="Link" name="Link" />
+          <br />
+          <label for="whats">Whatsapp para contato<span>(somente números)</span></label
+          >
+          <br />
+          <input type="number" id="Whatsapp" name="Whatsapp" />
+          <br />
+          <label for="txt">Informações gerais</label><br />
+          <textarea name="txt" id="txt" cols="30" rows="10"></textarea>
+          <br />
+          <label for="categoria">Categoria</label><br />
+          <select name="categoria" id="categoria">
+            Tipo de evento
+          </select>
+        </fieldset>
+        <fieldset>
+          <h2>Privacidade</h2>
+          <label for="mail">E-mail do adminstrador<span>(digite um email válido)</span></label
+          >
+          <br />
+          <input type="mail" name="mail" id="mail" />
+          <br />
+          <label for="senha">Senha de acesso para os participantes<span>(Mínimo de 8 caracteres)</span></label
+          ><br />
+          <input type="checkbox" id="check" name="check" />
+          <label for="check">Evento privado</label>
+        </fieldset>
+        <fieldset>
+          <h2>Dia e hora</h2>
+          <div><label for="Data">Data</label><br>
+          <input type="date" name="Data" id="Data"></div>
+          <div>
+            <label for="hora">Das</label><br>
+            <input type="datetime" name="" id="">
+          </div>
+      </form>
+      <footer><input type="submit" value="Salvar Evento"></footer>
+    </main>
+    
+  </body>
+</html>
