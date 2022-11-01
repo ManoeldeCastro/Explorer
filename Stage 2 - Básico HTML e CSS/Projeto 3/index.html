@@ -34,8 +34,8 @@
           <textarea name="txt" id="txt" cols="30" rows="10"></textarea>
           <br />
           <label for="categoria">Categoria</label><br />
-          <select name="categoria" id="categoria">
-            Tipo de evento
+          <select name="categoria" id="categoria" required>
+            <option value="" selected disabled>Tipo de evento</option>
           </select>
         </fieldset>
         <fieldset>
@@ -46,21 +46,34 @@
           <input type="mail" name="mail" id="mail" />
           <br />
           <label for="senha">Senha de acesso para os participantes<span>(Mínimo de 8 caracteres)</span></label
-          ><br />
-          <input type="checkbox" id="check" name="check" />
+          ><br>
+          <input type="password" name="senha" id="senha">
+          <br />
+          <div id="checkbox">
+          <input type="checkbox" id="check" name="check" checked/>
           <label for="check">Evento privado</label>
-        </fieldset>
-        <fieldset>
-          <h2>Dia e hora</h2>
-          <div><label for="Data">Data</label><br>
-          <input type="date" name="Data" id="Data"></div>
-          <div>
-            <label for="hora">Das</label><br>
-            <input type="datetime" name="" id="">
           </div>
+        </fieldset>
+        <fieldset id="data1">
+          <h2>Dia e hora</h2>
+          <section>
+            <div><label for="Data">Data</label><br>
+            <input type="date" name="Data" id="Data"></div>
+            <div>
+              <label for="hora">Das</label><br>
+              <input type="datetime" name="hora" id="hora">
+            </div>
+              <div>
+              <label for="hora">Até</label><br>
+              <input type="datetime" name="hora" id="hora">
+            </div>
+          </section>
       </form>
-      <footer><input type="submit" value="Salvar Evento"></footer>
-    </main>
+      </main>
+      <footer>
+        <input type="submit" value="Salvar Evento">
+      </footer>
+    
     
   </body>
 </html>
