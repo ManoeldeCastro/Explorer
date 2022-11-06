@@ -6,6 +6,10 @@ const form = document.querySelector("form")
 const inputWeight = document.querySelector("#weight")
 const inputHeight = document.querySelector("#height")
 
+// oninput > serve para criar um função ao comecar a digitar no input selecionado
+inputWeight.oninput = () => alertError.close()
+inputHeight.oninput = () => alertError.close()
+
 //onsubmit - propriedade para formularios - nesse caso está executando uma função quando é enviado o formulário
 
 form.onsubmit = (event) => {
