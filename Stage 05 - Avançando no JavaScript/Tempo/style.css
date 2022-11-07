@@ -35,11 +35,10 @@ button img {
 .hide {
   display: none;
 }
-.play img,
+/* .play img,
 .pause img,
 .sound-on img {
-  fill: red;
-}
+} */
 #timer {
   font-size: clamp(4rem, 4rem + 10vw, 8.8rem);
   font-weight: bold;
