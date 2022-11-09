@@ -1,8 +1,8 @@
 export default function Controls({
-  buttonPlay,
   buttonPause,
-  buttonStop,
+  buttonPlay,
   buttonSet,
+  buttonStop,
 }) {
   function play() {
     buttonPlay.classList.add("hide")
@@ -10,6 +10,7 @@ export default function Controls({
     buttonSet.classList.add("hide")
     buttonStop.classList.remove("hide")
   }
+
   function pause() {
     buttonPause.classList.add("hide")
     buttonPlay.classList.remove("hide")
@@ -27,6 +28,7 @@ export default function Controls({
     if (!newMinutes) {
       return false
     }
+
     return newMinutes
   }
 
