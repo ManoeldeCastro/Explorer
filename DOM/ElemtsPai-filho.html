@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <div id="div1">
+      <h1>T1</h1>
+    </div>
+    <script>
+      var t1 = document.body.children[0].children[0]
+      // pegando elementos através dos elementos pais e atribuindo a uma variável
+      t1.innerHTML = "peguei você"
+      // Mudando conteudo do elemento html
+      div1 = t1.parentElement
+      //pegando elemento através do elemento filho
+      let h2 = document.createElement("h2")
+      // Criando elemento html através do dom
+      div1.appendChild(h2)
+      // atribuindo elemento HTML
+      h2.innerHTML = "Subtitulo"
+      console.log(div1)
+    </script>
+  </body>
+</html>
