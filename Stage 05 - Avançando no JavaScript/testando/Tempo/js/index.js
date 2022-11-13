@@ -1,3 +1,5 @@
+import Sounds from "./sound.js"
+
 const buttonPlay = document.querySelector(".play")
 const buttonPause = document.querySelector(".pause")
 const buttonStop = document.querySelector(".stop")
@@ -8,6 +10,8 @@ const minutesTela = document.querySelector("#minutes")
 const secondsTela = document.querySelector("#seconds")
 let minutes = Number(minutesTela.textContent)
 let contar
+
+const sound = Sounds()
 
 //resetar controles
 function resetar() {
@@ -31,6 +35,7 @@ function play() {
     atualizar(minutes, 0)
     if (minutes <= 0 && seconds <= 0) {
       resetar()
+      sound.timerFim.play()
       return
     }
     if (seconds <= 0) {
@@ -49,12 +54,14 @@ buttonPlay.addEventListener("click", () => {
   buttonStop.classList.remove("hide")
   buttonSet.classList.add("hide")
   play()
+  sound.pressionar.play()
 })
 
 buttonPause.addEventListener("click", () => {
   buttonPlay.classList.remove("hide")
   buttonPause.classList.add("hide")
   clearTimeout(contar)
+  sound.pressionar.play()
 })
 
 buttonStop.addEventListener("click", () => {
@@ -69,4 +76,15 @@ buttonSet.addEventListener("click", () => {
   minutes = minutesTela.textContent = Number(newMinutes)
   atualizar(minutes, 0)
   return minutes
+})
+
+buttonSoundOn.addEventListener("click", () => {
+  buttonSoundOn.classList.add("hide")
+  buttonSoundOff.classList.remove("hide")
+  sound.fundoAudio.pause()
+})
+buttonSoundOff.addEventListener("click", () => {
+  buttonSoundOn.classList.remove("hide")
+  buttonSoundOff.classList.add("hide")
+  sound.fundoAudio.play()
 })
