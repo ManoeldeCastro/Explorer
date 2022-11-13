@@ -17,6 +17,7 @@ function resetar() {
   buttonSet.classList.remove("hide")
   atualizar(minutes, 0)
 }
+// Atualizar minutes no escopo global e local
 function atualizar(minutes, seconds) {
   minutesTela.textContent = String(minutes).padStart(2, "0")
   secondsTela.textContent = String(seconds).padStart(2, "0")
