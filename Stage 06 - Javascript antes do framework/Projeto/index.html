@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>SPA</title>
+  </head>
+  <body>
+    <nav>
+      <a href="/" onclick="route()">Home</a>
+      <a href="/about" onclick="route()">Sobre</a>
+      <a href="/contact" onclick="route()">Contact</a>
+      <a href="/404" onclick="route()">404</a>
+    </nav>
+
+    <div id="app"></div>
+
+    <script>
+      const routes = {
+        "/": "pages/home.html",
+        "/about": "pages/about.html",
+        "/contact": "pages/contact.html",
+        404: "pages/404.html",
+      }
+      function route(event) {
+        event = event || window.event
+        event.preventDefault()
+        window.history.pushState({}, "", event.target.href)
+        handle()
+      }
+
+      function handle() {
+        const { pathname } = window.location
+        const route = routes[pathname] || routes[404]
+
+        // sintetizando fetch = prometo para você que vou buscar route, then = quando eu buscar, vou executar a função dentro dos parentes
+        fetch(route).then((data) => console.log(data))
+
+        //data está recebendo o arquivo do objeto routes, e a função esta retornando apenas os elementos htmls que é data.text() - (data refere-se ao arquivo com todas as propriedades, data.text() - refere-se ao elementos html), ao passar o then() novamente estou atribuindo a data.text() o parâmetro html, sabemos que ao criar um parâmetro estamos criando um variável apenas no escopo da função, mas a arrow function esta jogando para fora a variável html, e está atribuída a está variável os elementos html's da pagina que eu estou clicando
+        console.log(route)
+      }
+    </script>
+  </body>
+</html>
