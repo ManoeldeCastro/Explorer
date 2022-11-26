@@ -1,7 +1,10 @@
-var person = {
-  name: "Manoel",
-  age: 22,
-  sex: "Male",
+function area(largura, altura) {
+  let resultado = largura * altura
+  return resultado
 }
-person.name = "Michele"
-console.log(person.name)
+function quadrado(lado) {
+  return area(lado, lado)
+}
+
+const quadrado1 = quadrado(4)
+console.log(quadrado1)
