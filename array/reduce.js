@@ -42,21 +42,30 @@ console.log(soma2)
 // 2° parâmetro -  é quem recebe cada elemento do array - no exemplo acima o 2 parâmetro está recebendo cada objeto do array personagem
 // para  contextualizar melhor o parâmetro 2, como o Reduce é um método que funciona como um laço, cada volta nova o "personagem"  que é o 2° parâmetro acessa uma nova chave/index desse array
 
-// O escopo, no escopo não precisamos colocar como se tivesse acessando cada index, pois o próprio método já entende o que queremos, como personagem que é o 2° parâmetro ta acessando um objeto podemos então acessar as suas propriedades de forma dinâmica e é o que fazemos, colocando "personagem.nivel", que seria o mesmo que personagens[n].nivel
+// O escopo, no escopo não precisamos colocar como se tivesse acessando cada index/chave, pois o próprio método já entende o que queremos, como personagem que é o 2° parâmetro ta acessando um objeto podemos então acessar as suas propriedades de forma dinâmica e é o que fazemos, colocando "personagem.nivel", que seria o mesmo que personagens[n].nivel
 
-// apos a função, estamos colocando o valor 0 apos a função e uma virgula, significa que o primeiro parâmetro recebe o valor 0 para que se inicie a soma, se colocarmos outro valor ele iniciara a somar como um valor que colocarmos, como foi feito acima com o numero 5.
+// apos a função, estamos colocando o valor 0 apos a função e uma virgula, significa que o primeiro parâmetro recebe o valor 0 para que se inicie a soma, se colocarmos outro valor ele iniciara a somar como um valor que colocarmos, como foi feito acima com o numero 5. o tipo de dado que está depois da virgula é o dado que vai ser retornado depois da redução.
 
 //exemplo 3
-const raca = personagens.reduce((raca, personagem) => {
-  if (raca[personagem.raca] === "Orc") {
-    raca.orcs = personagem.raca
-  } else if (personagem.raca === "Humano") {
-    raca.humano = personagem.raca
+const raca = personagens.reduce((valorFinal, personagem) => {
+  if (valorFinal[personagem.raca]) {
+    //valorFinal está acessando o objeto que inicialmente criamos vazio apos a virgula
+    valorFinal[personagem.raca].push(personagem) // verificando se tem a raça dentro do objeto raça, caso tenha ele joga para dentro do array
   } else {
-    raca.elfo = personagem.raca
+    valorFinal[personagem.raca] = [personagem] // criando caso n tenha a raça com o mesmo nome, no objeto raça
   }
+  return valorFinal
+}, {})
+// o reduce so retorna o valor quando passar por todos os elementos do array, ou seja  ele passou por 7 elementos, atribuiu cada elemento a ao objeto raça da variável.
+console.log(raca)
 
-  return raca
+const classe = personagens.reduce((valorFinal, personagem) => {
+  if (valorFinal[personagem.classe]) {
+    valorFinal[personagem.classe].push(personagem)
+  } else {
+    valorFinal[personagem.classe] = [personagem]
+  }
+  return valorFinal
 }, {})
 
-console.log(raca)
+console.log(classe)
