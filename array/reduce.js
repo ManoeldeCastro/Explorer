@@ -37,9 +37,9 @@ console.log(soma2)
 
 // Estrutura do Reduce,
 
-// 1° parâmetro valor acumulado ou valor que vai receber todos os valores da soma, para melhor entendimento podemos colocar o primeiro parâmetro com o mesmo nome da variável que está recebendo o reduce, não sendo isso uma pratica obrigatória
+// 1° parâmetro - valor acumulado ou valor que vai receber todos os valores da soma, para melhor entendimento podemos colocar o primeiro parâmetro com o mesmo nome da variável que está recebendo o reduce, não sendo isso uma pratica obrigatória
 
-// 2° parâmetro é quem recebe cada elemento do array - no exemplo acima o 2 parâmetro está recebendo cada objeto do array personagem
+// 2° parâmetro -  é quem recebe cada elemento do array - no exemplo acima o 2 parâmetro está recebendo cada objeto do array personagem
 // para  contextualizar melhor o parâmetro 2, como o Reduce é um método que funciona como um laço, cada volta nova o "personagem"  que é o 2° parâmetro acessa uma nova chave/index desse array
 
 // O escopo, no escopo não precisamos colocar como se tivesse acessando cada index, pois o próprio método já entende o que queremos, como personagem que é o 2° parâmetro ta acessando um objeto podemos então acessar as suas propriedades de forma dinâmica e é o que fazemos, colocando "personagem.nivel", que seria o mesmo que personagens[n].nivel
@@ -48,7 +48,7 @@ console.log(soma2)
 
 //exemplo 3
 const raca = personagens.reduce((raca, personagem) => {
-  if (personagem.raca === "Orc") {
+  if (raca[personagem.raca] === "Orc") {
     raca.orcs = personagem.raca
   } else if (personagem.raca === "Humano") {
     raca.humano = personagem.raca
