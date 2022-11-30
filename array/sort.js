@@ -14,3 +14,5 @@ personagens.sort((a, b) => {
 
 console.log(personagens)
 // método sort ordena os elementos em ordem, os parâmetros acima representa os elementos, nesse caso estou acessando em cada elemento a propriedade .nivel e organizando em ordem crescente se o resultado a operação de returno for positivo ele faz em ordem crescente, caso seja negativo em ordem decrescente.
+
+// o sort modifica o array.
