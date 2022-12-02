@@ -13,5 +13,10 @@ console.log(
 )
 
 //Date
-let myBirthDay = new Date(2022, 05, 17) // Date o mes começa no 0, sendo 0 = Janeiro, 1 = fevereiro ... e assim por diante
+let myBirthDay = new Date(2022, 05, 17) // Date o mes começa no 0, sendo 0 = Janeiro, 1 = fevereiro ... e assim por diante, ou seja funciona como um array. - nesse exemplo instanciamo um novo objeto Date
 console.log(myBirthDay)
+
+console.log(
+  Date.now(),
+  "- Retorna a data atual em milisegundos, a partir da data base que é 01/01/1970, ou seja esse resultado é o tempo que já passou em milissegundos. now = método estático"
+) //
