@@ -1,8 +1,15 @@
 function show() {
-  let elements = document.getElementsByName("phone")
-  //document.getElementById("name") - By id
+  let elements = document.getElementsByTagName("input")
+  //document.querySelectorAll("#phones") - Por seletor css
+  //document.getElementsByName("phone") - Por name
+  //document.getElementById("name") - Por id
   console.log(elements)
-  elements.forEach((name, i) => {
-    console.log(name, i)
-  })
+
+  // for each nao funciona com HTMLcollection
+  // elements.forEach((name /*, i , p*/) => {
+  //   //   //name - elemento html
+  //   //   //i - index do nodelist/array
+  //   //   //p - parents = o mesmo array que foi passado no forEach
+  //   console.log(name)
+  // })
 }
