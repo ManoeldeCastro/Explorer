@@ -19,3 +19,9 @@ let [nave1, , nave3] = spaceships
 // Destructuring pulando chave do array
 console.log(nave1, nave3)
 //Mesma coisa da do objeto, mas como a chave do array é numerada, pode atribuir o nome direto e a destruct é feita com [] no lugar de {}
+
+// Destructuring  com function, cada {} é um parâmetro, como na função tem apenas uma chave, precisamos passa um objeto como parâmetro
+function destruct3({ name, crewQuantity, isHitched }) {
+  console.log(name, crewQuantity, isHitched)
+}
+destruct3(spaceship)
