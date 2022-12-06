@@ -1,0 +1,24 @@
+{
+  "name": "npm_class",
+  "version": "1.0.0",
+  "description": "Aula de npm",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ManoeldeCastro/Explorer.git"
+  },
+  "keywords": [
+    "NPM",
+    "class",
+    "study"
+  ],
+  "author": "\"Manoel\"",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ManoeldeCastro/Explorer/ES6+/5-NPM-Gerenciadordepacotes"
+  },
+  "homepage": "https://github.com/ManoeldeCastro/Explorer#readme"
+}
