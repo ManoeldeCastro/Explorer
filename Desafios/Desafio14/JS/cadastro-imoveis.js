@@ -6,33 +6,42 @@ class Imovel {
   }
 }
 function salvar() {
+  event.preventDefault()
   let ul = document.querySelector("ul")
   let tipo = document.querySelector("#tipo").value
   let area = document.querySelector("#area").value
-  let isAlugado = document.querySelector("input[name=alugado]")
-  if (isAlugado == "Sim") {
-    isAlugado.innerText = "Está alugado"
-    let span = document.createElement("span")
-    span.appendChild(isAlugado)
-    span.style.background = "red"
-    span.style.color = "white"
-  } else {
-    isAlugado = "Disponível para locação."
-  }
+  let isAlugado = document.querySelector("input[name=alugado]:checked").value
+
+  let span = criarSpan(isAlugado)
   let buttonRemove = document.createElement("button")
   let li = document.createElement("li")
+  li.appendChild(span)
   buttonRemove.setAttribute("onclick", "remove(this)")
   buttonRemove.setAttribute("type", "button")
   buttonRemove.innerText = "Remover"
   let novoImovel = new Imovel(tipo, area, isAlugado)
-  li.innerHTML = `${novoImovel.isAlugado} ${novoImovel.tipo} com área de ${novoImovel.area}m² `
+  li.innerHTML += ` - ${novoImovel.tipo} com área de ${novoImovel.area}m² `
   ul.appendChild(li)
   li.appendChild(buttonRemove)
+  document.querySelector("input[name='area']").value = ""
 }
 
 function remove(button) {
-  console.log(button)
-
   let imovel = button.parentNode
   document.querySelector("ul").removeChild(imovel)
+}
+function criarSpan(isAlugado) {
+  if (isAlugado == "Sim") {
+    let span = document.createElement("span")
+    span.style.color = "white"
+    span.style.backgroundColor = "Red"
+    span.innerText = "ALUGADO"
+    return span
+  } else {
+    let span = document.createElement("span")
+    span.innerText = "Disponivel para locação"
+    span.style.color = "black"
+    span.style.backgroundColor = "transparent"
+    return span
+  }
 }
