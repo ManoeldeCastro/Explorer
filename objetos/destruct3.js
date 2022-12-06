@@ -21,3 +21,4 @@ const cachorro = {
 const { Cor: banyCor } = cachorro
 
 console.log(banyCor)
+console.log(cachorro.Cor)
