@@ -13,9 +13,9 @@
   "keywords": [],
   "author": "",
   "license": "ISC",
+  "type": "module",
   "bugs": {
     "url": "https://github.com/ManoeldeCastro/Explorer/issues"
   },
-  "homepage": "https://github.com/ManoeldeCastro/Explorer#readme",
-  "type": "module"
+  "homepage": "https://github.com/ManoeldeCastro/Explorer#readme"
 }
