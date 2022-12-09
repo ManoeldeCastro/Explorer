@@ -1,11 +1,11 @@
 class Spaceship {
-  constructor(name, maxCapacity, currentCharge) {
+  constructor(name, maxEnergy, Atual) {
     this.name = name
-    this.maxCapacity = maxCapacity
-    this.currentCharge = currentCharge
+    this.maxEnergy = maxEnergy
+    this.Atual = Atual
   }
-  currentPercentCharge() {
-    return (this.currentCharge * 100) / this.maxCapacity
+  energyPercent() {
+    return (this.Atual * 100) / this.maxEnergy
   }
 }
 export default Spaceship
