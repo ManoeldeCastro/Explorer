@@ -10,7 +10,11 @@ const bateriaAtualizada = function (bateriaConsumida) {
     if (spaceship.bateriaAtual > 0) {
       resolve(spaceship.bateriaAtual)
     } else {
-      reject("Bateria esgotada! Nave será desativada em alguns segundos.")
+      reject(
+        "Bateria esgotada! " +
+          spaceship.name +
+          " será desativada em alguns segundos."
+      )
     }
   })
 }
@@ -25,12 +29,14 @@ const calcularBateriaConsumida = function (velocidade, segundos) {
     }
   })
 }
-calcularBateriaConsumida(30, 600)
+calcularBateriaConsumida(6000, 600)
   .then((bateriaConsumida) => {
-    bateriaAtualizada(bateriaConsumida).then((bateria) => {
-      console.log("nave está com bateria de " + bateria)
-    })
+    return bateriaAtualizada(bateriaConsumida)
+  })
+  .then((bateria) => {
+    console.log("nave está com bateria de " + bateria)
   })
   .catch((erro) => {
     console.log(erro)
   })
+console.log(calcularBateriaConsumida(75000, 800))
